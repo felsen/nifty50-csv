@@ -1,13 +1,13 @@
 from bs4 import BeautifulSoup
+from fake_useragent import UserAgent
 import urllib2
 import pandas as pd
 import datetime
 
 
 base_url = "http://www.chittorgarh.com/report/nse_nifty_index_50_stocks_live_list/7/"
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'
-}
+user_agent = UserAgent()
+headers = { 'User-Agent': str(user_agent.random) }
 req = urllib2.Request(base_url, None, headers)
 read_url = urllib2.urlopen(req)
 response = read_url.read()
