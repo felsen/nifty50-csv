@@ -14,4 +14,4 @@ python nifty_50_csv.py
 
 ## Info
 
-Just run the python file it will generate the live Nifty 50 details in the CSV format.
+Just run the python file in terminal it will generate the live Nifty 50 details in the CSV format.
