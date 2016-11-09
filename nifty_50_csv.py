@@ -23,7 +23,6 @@ for d in table_value:
     cols = d.find_all("td")
     cols = [str(element.text.strip()) for element in cols]
     dataset.append(tuple(cols))
-
 data_frame = pd.DataFrame(data=dataset, columns=column_header)
 data_frame['Date_Updated'] = pd.to_datetime(data_frame['Date_Updated'], format="%m/%d/%Y")
 now = datetime.datetime.now()
