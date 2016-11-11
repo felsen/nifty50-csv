@@ -14,8 +14,6 @@ response = read_url.read()
 soup = BeautifulSoup(response, "lxml")
 table = soup.find_all("table", attrs={'class': 'table'})
 table_data = [j for i in table for j in i.find_all("tr")]
-table_header = [str(j.text.strip()) for d in table_data[0:1]
-                for j in d.find_all("th")]
 table_value = table_data[1:]
 column_header = ["Company_Name", "Open", "High", "Low", "LTP", "Change", "LTP1", "Percentage_Change", "Shares_Traded", "Trades", "Date_Updated"]
 dataset = []
